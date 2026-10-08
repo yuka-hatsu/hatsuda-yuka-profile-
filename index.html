@@ -1,0 +1,459 @@
+<title>初田 有香のプロフィール</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Zen+Maru+Gothic:wght@500;700&family=DotGothic16&display=swap">
+<style>
+  /* レイアウト：千鳥格子の地に、角を切り欠いたチケット型のピンクの台紙を1枚。中は左寄せの1カラム */
+  /* 平成レトロのピンク一色の世界観なので、ライト・ダーク共通の単一テーマにしている */
+  :root {
+    --check: #f7a3c6;      /* 千鳥格子 */
+    --paper: #fdf3f8;      /* 千鳥格子の白地 */
+    --panel: #f5a2c5;      /* 台紙のピンク */
+    --hot: #e8388a;        /* 濃いピンク */
+    --berry: #6a1541;      /* 本文 */
+    --berry-soft: #9c4873; /* 白地の上の補足文 */
+    --white: #ffffff;
+    --blush: #ffe3ef;
+    --aqua: #7fd3d0;
+    --peri: #7d90d6;
+    --sun: #ffd43b;
+    --sky: #4db9ec;
+    --orange: #ff8a3d;
+    --lcd: #dfe6d3;
+    --lcd-ink: #2f3a2c;
+
+    --font-display: "Mochiy Pop One", "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+    --font-body: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+    --font-dot: "DotGothic16", "MS Gothic", monospace;
+
+    color-scheme: light;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background-color: var(--paper);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23f7a3c6' d='M0 0h4v4H0z M4 0h2L4 2z M8 0v2L6 4H4z M0 4h2L0 6z M4 4v2L2 8H0z'/%3E%3C/svg%3E");
+    background-size: 28px 28px;
+    color: var(--berry);
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.9;
+    padding-inline: 16px;
+    padding-block: 28px;
+  }
+  h1, h2, h3, p, dl, dd, ul { margin: 0; padding: 0; }
+  svg.deco { flex: none; display: block; }
+
+  /* チケット型の台紙（四隅を丸く切り欠く） */
+  .ticket {
+    position: relative;
+    max-width: 780px;
+    margin-inline: auto;
+    padding: 76px clamp(20px, 6vw, 56px) 84px;
+    background:
+      radial-gradient(circle at 0 0, transparent 22px, var(--panel) 23px) top left / 50.5% 50.5% no-repeat,
+      radial-gradient(circle at 100% 0, transparent 22px, var(--panel) 23px) top right / 50.5% 50.5% no-repeat,
+      radial-gradient(circle at 0 100%, transparent 22px, var(--panel) 23px) bottom left / 50.5% 50.5% no-repeat,
+      radial-gradient(circle at 100% 100%, transparent 22px, var(--panel) 23px) bottom right / 50.5% 50.5% no-repeat;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+  }
+  .corner { position: absolute; width: 48px; height: 48px; }
+  .corner.tl { top: 22px; left: 30px; color: var(--aqua); }
+  .corner.tr { top: 22px; right: 30px; color: var(--peri); }
+  .corner.bl { bottom: 22px; left: 30px; color: var(--peri); }
+  .corner.br { bottom: 22px; right: 30px; color: var(--aqua); }
+
+  /* かざりの列（ハート・ダイヤ・花） */
+  .sprinkle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(18px, 6vw, 40px);
+  }
+  .sprinkle svg { width: 26px; height: 26px; }
+
+  /* ヒーロー */
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px 32px;
+  }
+  .avatar {
+    position: relative;
+    flex: none;
+    width: 136px;
+    height: 136px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 7px solid var(--hot);
+    display: grid;
+    place-items: center;
+  }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+  .avatar span {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    line-height: 1;
+    color: var(--hot);
+  }
+  .avatar svg {
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    width: 52px;
+    height: 52px;
+    color: var(--peri);
+  }
+  .hero-text { flex: 1 1 280px; min-width: 0; }
+  .role {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.08em;
+    color: var(--hot);
+    background: var(--white);
+    border-radius: 999px;
+    padding: 5px 16px;
+  }
+  .kana {
+    margin-top: 12px;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(2.25rem, 9vw, 3.5rem);
+    line-height: 1.25;
+    letter-spacing: 0.06em;
+    color: var(--white);
+    text-shadow: 3px 3px 0 var(--hot);
+  }
+  .catch {
+    flex-basis: 100%;
+    margin-top: 8px;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(1.125rem, 4.4vw, 1.5rem);
+    line-height: 1.8;
+    text-wrap: balance;
+  }
+  .catch mark {
+    color: var(--hot);
+    background: var(--white);
+    border-radius: 8px;
+    padding: 2px 8px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+  .lead { flex-basis: 100%; max-width: 34em; }
+
+  /* セクション共通 */
+  section { display: flex; flex-direction: column; gap: 22px; }
+  h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 1.375rem;
+    line-height: 1.4;
+    letter-spacing: 0.06em;
+    color: var(--white);
+    text-shadow: 2px 2px 0 var(--hot);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  h2 svg { width: 30px; height: 30px; }
+  h3 {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    color: var(--hot);
+  }
+
+  /* 得意なこと */
+  .skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 18px;
+  }
+  .skill {
+    background: var(--white);
+    border-radius: 22px;
+    border-bottom: 6px solid var(--hot);
+    padding: 26px 24px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+  }
+  .skill p { font-size: 0.9375rem; }
+  .tools {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 8px;
+  }
+  .tools li {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--hot);
+    background: var(--blush);
+    border-radius: 999px;
+    padding: 5px 14px;
+  }
+
+  /* 資料のビフォー・アフター */
+  .tidy {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 14px 18px;
+  }
+  .sheet {
+    width: 150px;
+    max-width: 100%;
+    aspect-ratio: 4 / 3;
+    background: var(--white);
+    border-radius: 10px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .sheet i { display: block; height: 6px; border-radius: 3px; background: var(--blush); }
+  .sheet.before i:nth-child(1) { width: 92%; }
+  .sheet.before i:nth-child(2) { width: 100%; }
+  .sheet.before i:nth-child(3) { width: 97%; }
+  .sheet.before i:nth-child(4) { width: 100%; }
+  .sheet.before i:nth-child(5) { width: 88%; }
+  .sheet.before i:nth-child(6) { width: 95%; }
+  .sheet.before i:nth-child(7) { width: 60%; }
+  .sheet.after i:nth-child(1) { width: 55%; height: 10px; background: var(--hot); margin-bottom: 5px; }
+  .sheet.after i:nth-child(2) { width: 78%; }
+  .sheet.after i:nth-child(3) { width: 64%; background: var(--sun); }
+  .sheet.after i:nth-child(4) { width: 72%; margin-bottom: 5px; }
+  .sheet.after i:nth-child(5) { width: 40%; height: 8px; background: var(--aqua); }
+  .tidy-arrow { font-family: var(--font-display); font-size: 1.25rem; color: var(--white); }
+  .tidy-caption { flex-basis: 100%; text-align: center; font-size: 0.875rem; font-weight: 700; }
+
+  /* 大切にしていること */
+  .values {
+    background: var(--white);
+    border-radius: 22px;
+    padding: 28px 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px 32px;
+  }
+  .values > div {
+    min-width: 0;
+    display: grid;
+    grid-template-columns: 26px minmax(0, 1fr);
+    gap: 2px 12px;
+    align-items: start;
+  }
+  .values svg { width: 26px; height: 26px; margin-top: 2px; grid-row: span 2; }
+  .values p { font-size: 0.9375rem; color: var(--berry-soft); grid-column: 2; }
+
+  /* プロフィール */
+  .profile {
+    background: var(--white);
+    border-radius: 22px;
+    padding: 8px 24px;
+    display: flex;
+    flex-direction: column;
+  }
+  .profile > div {
+    display: grid;
+    grid-template-columns: 8em minmax(0, 1fr);
+    gap: 4px 20px;
+    padding-block: 18px;
+  }
+  .profile > div + div { border-top: 2px dashed var(--panel); }
+  .profile dt { font-weight: 700; color: var(--hot); }
+  @media (max-width: 480px) {
+    .profile > div { grid-template-columns: minmax(0, 1fr); }
+  }
+
+  /* しめくくり：ポケベル風のメッセージ */
+  .closing { align-items: center; text-align: center; gap: 18px; }
+  .closing h2 { font-size: clamp(1.25rem, 5vw, 1.625rem); text-wrap: balance; justify-content: center; }
+  .closing p { max-width: 30em; }
+  .pager {
+    width: 250px;
+    max-width: 100%;
+    background: var(--hot);
+    border: 4px solid var(--white);
+    border-radius: 22px;
+    padding: 16px 16px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transform: rotate(-4deg);
+  }
+  .pager-screen {
+    background: var(--lcd);
+    color: var(--lcd-ink);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-family: var(--font-dot);
+    font-size: 1.0625rem;
+    line-height: 1.5;
+    letter-spacing: 0.06em;
+    text-align: left;
+  }
+  .pager-keys { display: flex; align-items: center; gap: 8px; }
+  .pager-keys i {
+    width: 34px;
+    height: 14px;
+    border-radius: 999px;
+    background: var(--blush);
+  }
+  .pager-keys svg { width: 24px; height: 24px; margin-left: auto; color: var(--white); }
+</style>
+
+<!-- かざり用の図形（花・ハート・ダイヤ） -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="flower" viewBox="0 0 48 48">
+      <g fill="currentColor">
+        <circle cx="24" cy="11" r="10"/>
+        <circle cx="36.4" cy="20" r="10"/>
+        <circle cx="31.6" cy="34.5" r="10"/>
+        <circle cx="16.4" cy="34.5" r="10"/>
+        <circle cx="11.6" cy="20" r="10"/>
+        <circle cx="24" cy="24" r="10"/>
+      </g>
+      <g fill="#ffd43b">
+        <circle cx="24" cy="19.6" r="3.3"/>
+        <circle cx="28.2" cy="22.6" r="3.3"/>
+        <circle cx="26.6" cy="27.6" r="3.3"/>
+        <circle cx="21.4" cy="27.6" r="3.3"/>
+        <circle cx="19.8" cy="22.6" r="3.3"/>
+        <circle cx="24" cy="24" r="3.3"/>
+      </g>
+    </symbol>
+    <symbol id="heart" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 21.5C5.5 16.6 2 13.1 2 8.9 2 5.9 4.3 3.5 7.2 3.5c1.9 0 3.6 1 4.8 2.7 1.2-1.7 2.9-2.7 4.8-2.7 2.9 0 5.2 2.4 5.2 5.4 0 4.2-3.500 7.700-10 12.600z"/>
+    </symbol>
+    <symbol id="diamond" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 1.500 20 12 12 22.500 4 12z"/>
+    </symbol>
+  </defs>
+</svg>
+
+<main class="ticket">
+  <svg class="deco corner tl" aria-hidden="true"><use href="#flower"/></svg>
+  <svg class="deco corner tr" aria-hidden="true"><use href="#flower"/></svg>
+  <svg class="deco corner bl" aria-hidden="true"><use href="#flower"/></svg>
+  <svg class="deco corner br" aria-hidden="true"><use href="#flower"/></svg>
+
+  <header class="hero">
+    <!-- アイコンの差し替え方：下の <span>有</span> を <img src="画像ファイル" alt="初田 有香のアイコン"> に置き換えてください -->
+    <div class="avatar">
+      <span aria-hidden="true">有</span>
+      <svg class="deco" aria-hidden="true"><use href="#flower"/></svg>
+    </div>
+    <div class="hero-text">
+      <p class="role">事務・バックオフィス</p>
+      <p class="kana">はつだ ゆか</p>
+      <h1>初田 有香</h1>
+    </div>
+    <p class="catch">職場で困ったとき、<mark>いちばん最初に声をかけてもらえる人</mark>でいたいと思っています。</p>
+    <p class="lead">はじめまして、初田です。講座でご一緒できてうれしいです。ふだんは事務・バックオフィスの仕事をしています。資料づくりと、仕事をちょっと楽にする工夫が好きです。どんな人なのか、少しだけ紹介させてください。</p>
+  </header>
+
+  <div class="sprinkle" aria-hidden="true">
+    <svg class="deco" style="color:var(--sun)"><use href="#heart"/></svg>
+    <svg class="deco" style="color:var(--sky)"><use href="#diamond"/></svg>
+    <svg class="deco" style="color:var(--orange)"><use href="#heart"/></svg>
+    <svg class="deco" style="color:var(--hot)"><use href="#diamond"/></svg>
+    <svg class="deco" style="color:var(--sun)"><use href="#heart"/></svg>
+  </div>
+
+  <section aria-labelledby="skills-h">
+    <h2 id="skills-h"><svg class="deco" style="color:var(--aqua)" aria-hidden="true"><use href="#flower"/></svg>得意なこと</h2>
+    <div class="skills">
+      <article class="skill">
+        <h3>資料・文書づくり</h3>
+        <p>伝えたいことを整理して、ぱっと見てわかる資料やマニュアルにまとめます。見た目を整えたり、文章を読みやすくしたりするのが好きです。</p>
+        <ul class="tools"><li>PowerPoint</li><li>Word</li></ul>
+      </article>
+      <article class="skill">
+        <h3>業務改善・効率化</h3>
+        <p>毎回手間がかかっている作業を、もっと楽にできないか考えるのが好きです。生成AIを使った文章づくりや情報整理も試しています。</p>
+        <ul class="tools"><li>生成AI（Claudeなど）</li></ul>
+      </article>
+    </div>
+    <div class="tidy" aria-hidden="true">
+      <div class="sheet before"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <span class="tidy-arrow">→</span>
+      <div class="sheet after"><i></i><i></i><i></i><i></i><i></i></div>
+      <p class="tidy-caption">文字がぎっしりの資料を、すっと読める形に</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="values-h">
+    <h2 id="values-h"><svg class="deco" style="color:var(--peri)" aria-hidden="true"><use href="#flower"/></svg>大切にしていること</h2>
+    <div class="values">
+      <div>
+        <svg class="deco" style="color:var(--sun)" aria-hidden="true"><use href="#heart"/></svg>
+        <h3>相手の立場で考える</h3>
+        <p>受け取った人が困らないように、先回りして準備します。</p>
+      </div>
+      <div>
+        <svg class="deco" style="color:var(--sky)" aria-hidden="true"><use href="#diamond"/></svg>
+        <h3>わかりやすく伝える</h3>
+        <p>だれが見ても迷わない資料と説明を心がけています。</p>
+      </div>
+      <div>
+        <svg class="deco" style="color:var(--aqua)" aria-hidden="true"><use href="#diamond"/></svg>
+        <h3>ムダを減らす</h3>
+        <p>みんなが少し楽になる仕組みを考えるのが好きです。</p>
+      </div>
+      <div>
+        <svg class="deco" style="color:var(--orange)" aria-hidden="true"><use href="#heart"/></svg>
+        <h3>話しやすい雰囲気</h3>
+        <p>気軽に相談してもらえる関係を大事にしています。</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="profile-h">
+    <h2 id="profile-h"><svg class="deco" style="color:var(--aqua)" aria-hidden="true"><use href="#flower"/></svg>プロフィール</h2>
+    <dl class="profile">
+      <div>
+        <dt>しごと</dt>
+        <dd>事務・バックオフィス。今の職場に入って数年がたち、中堅として日々の業務を支えています。</dd>
+      </div>
+      <div>
+        <dt>心がけていること</dt>
+        <dd>まず相手の話をしっかり聞くこと。聞き上手を目指して、裏方として支えられるよう心がけています。</dd>
+      </div>
+      <div>
+        <dt>勉強中のこと</dt>
+        <dd>生成AIの活用と、語学。講座で学んだことも、仕事に少しずつ取り入れていきたいです。</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="closing" aria-labelledby="closing-h">
+    <div class="pager" aria-hidden="true">
+      <div class="pager-screen">キガルニ &gt;_&lt;<br>コエカケテネ</div>
+      <div class="pager-keys"><i></i><i></i><svg class="deco"><use href="#heart"/></svg></div>
+    </div>
+    <h2 id="closing-h">講座のあいだ、気軽に声をかけてください</h2>
+    <p>仕事のことでも、ちょっとした雑談でも歓迎です。ご一緒できる時間を楽しみにしています。どうぞよろしくお願いします。</p>
+  </section>
+</main>
